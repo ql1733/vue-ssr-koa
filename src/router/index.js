@@ -16,7 +16,8 @@ export function createRouter () {
         path: '/',
         name: 'Home',
         component: home
-      },{
+      },
+      {
         path: '/list',
         name: 'List',
         component: List

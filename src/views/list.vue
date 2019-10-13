@@ -22,9 +22,9 @@ export default {
       return this.$store.state.text
     }
   },
-  methods:{
-    change(){
-      //this.$store.commit('setValue','go!')
+  methods: {
+    change () {
+      // this.$store.commit('setValue','go!')
       this.$store.dispatch('fetchVal')
     }
   },

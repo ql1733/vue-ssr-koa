@@ -75,7 +75,10 @@ const render = async (ctx, next) => {
       url: ctx.url,
       title: 'OK'
     }
-
+    if (/^\/api/.test(ctx.url)) { // 如果请求以/api开头，则进入api部分进行处理。
+      next()
+      return
+    }
     try {
       status = 200
       html = await renderer.renderToString(context)

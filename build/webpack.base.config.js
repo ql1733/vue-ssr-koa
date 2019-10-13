@@ -6,7 +6,9 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
 
 const isProd = process.env.NODE_ENV === 'production'
-
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 module.exports = {
   mode: isProd ? 'production' : 'development',
   output: {
@@ -23,6 +25,16 @@ module.exports = {
   },
   module: {
     rules: [{
+      test: /\.(js|vue)$/,
+      loader: 'eslint-loader',
+      enforce: 'pre',
+      include: [resolve('src'), resolve('test')],
+      options: {
+        formatter: require('eslint-friendly-formatter'),
+        emitWarning: false
+      }
+    },   
+      {
       test: /\.(js|jsx)$/,
       include: [path.resolve(__dirname, '../src')],
       exclude: /(node_modules|bower_components)/,
