@@ -6,6 +6,6 @@ import { merge } from 'lodash'
 const config = merge({}, httpConfig, defaultConfig)
 
 const httpInstance = newInstance()
-export function post (url, data) {
+export function ajax (url, data) {
   return fetch(httpInstance, config, url, data)
 }

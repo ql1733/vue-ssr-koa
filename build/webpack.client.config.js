@@ -6,7 +6,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
 const version = ' V ' + require('../package.json').version
 
-console.log(version)
+// console.log(version)
 
 module.exports = merge(base, {
   name: 'web',

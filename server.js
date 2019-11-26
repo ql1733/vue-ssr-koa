@@ -56,7 +56,7 @@ if(isProd){
     try {
       renderer = createRenderer(bundle, options)
     } catch (e) {
-      console.log(chalk.red('\nServer error'), e)
+      // console.log(chalk.red('\nServer error'), e)
     }
   })
 }
@@ -89,7 +89,7 @@ const render = async (ctx, next) => {
       } else {
         status = 500
         // console.log(e)
-        console.log(chalk.red('\nError: '), e.message)
+       // console.log(chalk.red('\nError: '), e.message)
         html = '500 | Internal Server Error'
       }
     }

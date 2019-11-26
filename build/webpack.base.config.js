@@ -24,16 +24,17 @@ module.exports = {
     extensions: ['.js', '.vue', '.json', '.css']
   },
   module: {
-    rules: [{
-      test: /\.(js|vue)$/,
-      loader: 'eslint-loader',
-      enforce: 'pre',
-      include: [resolve('src'), resolve('test')],
-      options: {
-        formatter: require('eslint-friendly-formatter'),
-        emitWarning: false
-      }
-    },   
+    rules: [
+    //   {
+    //   test: /\.(js|vue)$/,
+    //   loader: 'eslint-loader',
+    //   enforce: 'pre',
+    //   include: [resolve('src'), resolve('test')],
+    //   options: {
+    //     formatter: require('eslint-friendly-formatter'),
+    //     emitWarning: false
+    //   }
+    // },   
       {
       test: /\.(js|jsx)$/,
       include: [path.resolve(__dirname, '../src')],
@@ -83,14 +84,14 @@ module.exports = {
     //     'stylus-loader'
     //   ]
     // },
-    // {
-    //   test: /\.less$/,
-    //   use: [
-    //     isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader',
-    //     'css-loader',
-    //     'less-loader'
-    //   ]
-    // },
+    {
+      test: /\.less$/,
+      use: [
+        isProd ? MiniCssExtractPlugin.loader : 'vue-style-loader',
+        'css-loader',
+        'less-loader'
+      ]
+    },
     {
       test: /\.html$/,
       use: 'vue-html-loader',

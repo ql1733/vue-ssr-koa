@@ -1,3 +1,3 @@
 export const prodConfig = {
-  baseURL: ''
+  baseURL: 'https://cnodejs.org/api/v1'
 }

@@ -1,8 +1,16 @@
 <template>
-  <div>Hello {{ world }} {{ text }}</div>
+  <div>
+    <Header>
+     </Header>
+    <router-view></router-view>
+
+  </div>
 </template>
 
 <script>
+// import axios from 'axios'
+import { getHomeAll } from '../api/home.js'
+import Header from '../components/common/header.vue'
 export default {
   data () {
     return {
@@ -19,8 +27,20 @@ export default {
       return this.$store.state.text
     }
   },
+  components: {
+    Header
+  },
   created () {
-    this.text = 'SSR'
+    // this.text = 'SSR'
+    //   getHomeAll('/topics', {
+    //   method: 'get',
+    //   page: 1,
+    //   tab: 'ask',
+    //   limit: 10,
+    //   mdrender: false
+    // }).then(res => {
+    //   console.log(res)
+    // })
   }
 }
 </script>

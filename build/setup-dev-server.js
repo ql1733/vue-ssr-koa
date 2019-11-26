@@ -21,7 +21,7 @@ module.exports = (app, cb) => {
     if (process.stdout.isTTY) {
       // Fill screen with blank lines. Then move to 0 (beginning of visible part) and clear it
       const blank = '\n'.repeat(process.stdout.rows)
-      console.log(blank)
+      // console.log(blank)
       readline.cursorTo(process.stdout, 0, 0)
       readline.clearScreenDown(process.stdout)
     }
