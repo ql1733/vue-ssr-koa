@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const reqMap = {}
-export function newInstance () {
+export function newInstance() {
   const http = axios.create()
   http.reqMap = {}
   http.interceptors.request.use((config) => {
@@ -21,7 +21,7 @@ export function newInstance () {
   return http
 }
 
-export function fetch (http, config, url, data) {
+export function fetch(http, config, url, data) {
   const method = data.method || 'get'
   if (method === 'get') {
     const newData = {}

@@ -25,16 +25,16 @@ module.exports = {
   },
   module: {
     rules: [
-    //   {
-    //   test: /\.(js|vue)$/,
-    //   loader: 'eslint-loader',
-    //   enforce: 'pre',
-    //   include: [resolve('src'), resolve('test')],
-    //   options: {
-    //     formatter: require('eslint-friendly-formatter'),
-    //     emitWarning: false
-    //   }
-    // },   
+      {
+        test: /\.(js|vue)$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [resolve('src'), resolve('test')],
+        options: {
+          formatter: require('eslint-friendly-formatter'),
+          emitWarning: false
+        }
+      },   
       {
       test: /\.(js|jsx)$/,
       include: [path.resolve(__dirname, '../src')],
@@ -46,7 +46,8 @@ module.exports = {
           plugins: [
             'transform-vue-jsx',
             '@babel/plugin-syntax-jsx',
-            '@babel/plugin-syntax-dynamic-import'
+            '@babel/plugin-syntax-dynamic-import',
+            '@babel/plugin-transform-runtime'
           ]
         }
       }

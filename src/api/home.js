@@ -1,6 +1,6 @@
 import { ajax } from '../lib/index.js'
 // import axios from 'axios'
-export function getHomeAll (url, data) {
+export function getHomeAll(url, data) {
 //   return new Promise((resolve, reject) => {
 //     axios.get(url, {
 //       params: data

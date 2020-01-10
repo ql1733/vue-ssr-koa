@@ -2,18 +2,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { getHomeAll } from '../api/home.js'
+import myInfo from './test'
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
 
-export function createStore () {
+export function createStore() {
   return new Vuex.Store({
     state: {
       text: '',
       list: []
     },
     actions: {
-      fetchVal ({ commit }) {
+      fetchVal({ commit }) {
         try {
           // setTimeout(() => {
           //     commit('setValue', 'hello my country')
@@ -24,7 +25,7 @@ export function createStore () {
           commit('setValue', 'Error')
         }
       },
-      getList ({ commit }, { route }) {
+      getList({ commit }, { route }) {
         return getHomeAll('/topics', {
           method: 'get',
           page: 1,
@@ -38,12 +39,15 @@ export function createStore () {
       }
     },
     mutations: {
-      setValue (state, value) {
+      setValue(state, value) {
         state.text = value
       },
-      setList (state, value) {
+      setList(state, value) {
         state.list = value
       }
+    },
+    modules: {
+      myInfo
     },
     strict: debug
   })

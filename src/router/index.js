@@ -7,7 +7,7 @@ import Ask from '@/views/ask'
 
 Vue.use(Router)
 
-export function createRouter () {
+export function createRouter() {
   return new Router({
     mode: 'history',
     fallback: false,

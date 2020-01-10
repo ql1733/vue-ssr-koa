@@ -6,7 +6,7 @@ import { createStore } from './store'
 import { createRouter } from './router'
 import { sync } from 'vuex-router-sync'
 
-export function createApp () {
+export function createApp() {
   const store = createStore()
   const router = createRouter()
   sync(store, router)
